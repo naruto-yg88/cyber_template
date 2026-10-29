@@ -1,0 +1,604 @@
+/* ==========================================================================
+   YG88 CYBER GATEWAY — 3D ORBITAL RING CAROUSEL (10 COUNTRIES)
+   Exact LLWIN Card & Flag Frame + Vivid Cyber Canvas + Full Side-Card Click
+   ========================================================================== */
+
+:root {
+  --bg-deep: #030712;
+  --card-bg: #061124;
+  --card-bg-active: #081a36;
+  --card-bg-hover: #0a1f40;
+  --cyan-primary: #06b6d4;
+  --cyan-bright: #22d3ee;
+  --emerald: #10b981;
+  --emerald-bright: #34d399;
+  --amber-bright: #fbbf24;
+  --pink-bright: #f472b6;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: var(--bg-deep);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+/* ==========================================================================
+   1. INTERACTIVE CYBER CANVAS (UNOBSTRUCTED — IDENTICAL TO LLVN.TOP)
+   ========================================================================== */
+
+.cyber-canvas-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #030712;
+}
+
+#cyber-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   2. MAIN SHELL & HEADER (LLVN.TOP GRADIENT TITLE & GLOW LOGO)
+   ========================================================================== */
+
+.page-shell {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cyber-header {
+  width: 100%;
+  max-width: 1024px;
+  text-align: center;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.brand-logo-wrap {
+  margin-bottom: 10px;
+}
+
+.brand-logo {
+  max-height: 68px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.cyber-main-title {
+  font-size: clamp(1.45rem, 3.2vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  padding-bottom: 0.08em;
+  background: linear-gradient(to right, #06b6d4, #f97316, #ef4444, #06b6d4);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: titleGradientAnim 4s ease infinite;
+  filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.5));
+}
+
+@keyframes titleGradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.cyber-subtitle {
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  color: #a5f3fc;
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  max-width: 640px;
+}
+
+/* ==========================================================================
+   3. 3D CIRCULAR 10-COUNTRY CAROUSEL & LLWIN CARD / FLAG FRAME
+   ========================================================================== */
+
+.coverflow-container {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  user-select: none;
+}
+
+/* Note: NO transform-style: preserve-3d on container so negative Z never blocks pointer-events on left/right cards */
+.coverflow-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 315px;
+  max-width: 82vw;
+  transition:
+    transform 0.52s cubic-bezier(0.2, 0.9, 0.3, 1),
+    opacity 0.52s ease,
+    filter 0.52s ease;
+  user-select: none;
+  cursor: pointer;
+  pointer-events: auto;
+  will-change: transform, opacity;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  font-family: var(--font-sans) !important;
+}
+
+.cyber-card-body {
+  width: 100%;
+  border-radius: 24px;
+  padding: 18px 20px;
+  background: var(--card-bg);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-family: var(--font-sans) !important;
+}
+
+.coverflow-card.active-node {
+  cursor: default;
+}
+
+.coverflow-card.active-node .cyber-card-body {
+  border: 2px solid #22d3ee;
+  box-shadow:
+    0 0 25px rgba(6, 182, 212, 0.5),
+    inset 0 0 15px rgba(6, 182, 212, 0.15);
+  background: var(--card-bg-active);
+}
+
+.coverflow-card:not(.active-node):hover .cyber-card-body {
+  border-color: rgba(34, 211, 238, 0.85);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
+  background: var(--card-bg-hover);
+}
+
+/* Card Top Terminal Bar (Without SRV_XX // NODE_0X) */
+.cyber-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.25);
+  margin-bottom: 12px;
+  font-size: 0.72rem;
+}
+
+.cyber-card-status-left {
+  color: #34d399;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pulse-emerald-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #34d399;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 1.8s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.92); }
+}
+
+.cyber-card-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.term-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.term-dot.rose {
+  background-color: #f43f5e;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.term-dot.amber {
+  background-color: #fbbf24;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.term-dot.emerald {
+  background-color: #34d399;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* Circular Country Flag Frame with Cyan-Blue-Emerald Glow (Exact LLWIN style) */
+.llwin-flag-row {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 10px;
+}
+
+.llwin-flag-ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  padding: 4px;
+  background: linear-gradient(to top right, #06b6d4, #3b82f6, #34d399);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  flex-shrink: 0;
+}
+
+.llwin-flag-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-sphere-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Country Name Title (Without HELLO / WELCOME) */
+.card-country-title {
+  text-align: center;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Telemetry Inner Box (Exact LLWIN colors & border) */
+.card-specs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #030914;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  margin-bottom: 14px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.spec-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spec-key {
+  color: #cbd5e1;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.spec-val {
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.spec-val.ping-emerald {
+  color: #34d399;
+}
+
+.spec-val.cipher-cyan {
+  color: #67e8f9;
+}
+
+.spec-val.load-pink {
+  color: #f472b6;
+}
+
+.spec-val.status-active {
+  color: #34d399;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* CTA Button VÀO CỔNG (Exact LLWIN style) */
+.btn-enter-gate {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 11px 16px;
+  border-radius: 16px;
+  border: 2px solid #22d3ee;
+  background: rgba(8, 51, 68, 0.4);
+  color: #a5f3fc;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-enter-gate:hover {
+  background: #22d3ee;
+  color: #020617;
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.75);
+}
+
+.btn-enter-gate:active {
+  transform: scale(0.96);
+}
+
+/* ==========================================================================
+   4. PREV / NEXT BUTTONS & ORBITAL DOTS BELOW CAROUSEL
+   ========================================================================== */
+
+.carousel-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 8px;
+  z-index: 40;
+}
+
+.nav-orbit-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.8);
+  background: rgba(2, 6, 23, 0.85);
+  color: #67e8f9;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-orbit-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-orbit-btn:hover {
+  color: #ffffff;
+  border-color: #67e8f9;
+  background: rgba(6, 182, 212, 0.22);
+  box-shadow: 0 0 26px rgba(34, 211, 238, 0.65);
+}
+
+.nav-orbit-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(3, 9, 20, 0.85);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.orbit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(148, 163, 184, 0.38);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.orbit-dot:hover {
+  background: rgba(34, 211, 238, 0.75);
+}
+
+.orbit-dot.is-active {
+  width: 22px;
+  background: #22d3ee;
+  box-shadow: 0 0 10px #22d3ee;
+}
+
+/* ==========================================================================
+   5. BOTTOM STATUS BAR CAPSULE (IDENTICAL TO LLVN.TOP)
+   ========================================================================== */
+
+.status-capsule {
+  width: 100%;
+  max-width: 896px;
+  margin: 16px auto 0;
+  padding: 12px 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  background: rgba(3, 9, 20, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.2);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  font-family: var(--font-mono);
+  z-index: 30;
+}
+
+.status-cell {
+  text-align: left;
+}
+
+.status-label {
+  font-size: 0.64rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.status-value {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-value.val-emerald {
+  color: #34d399;
+}
+
+.status-value.val-amber {
+  color: #fbbf24;
+}
+
+.status-value.val-cyan {
+  color: #22d3ee;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .coverflow-container {
+    height: 390px;
+  }
+
+  .coverflow-card {
+    width: 268px;
+  }
+
+  .cyber-card-body {
+    padding: 14px 16px;
+  }
+
+  .llwin-flag-ring {
+    width: 66px;
+    height: 66px;
+  }
+
+  .card-country-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .card-specs-grid {
+    padding: 10px 13px;
+    font-size: 0.72rem;
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+
+  .btn-enter-gate {
+    padding: 9px 12px;
+    font-size: 0.78rem;
+  }
+
+  .status-capsule {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px 14px;
+    margin-top: 12px;
+  }
+
+  .status-cell {
+    text-align: center;
+  }
+
+  .status-value {
+    font-size: 0.74rem;
+  }
+
+  .carousel-dots {
+    gap: 5px;
+    padding: 5px 9px;
+  }
+
+  .orbit-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .orbit-dot.is-active {
+    width: 16px;
+  }
+}

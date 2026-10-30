@@ -14,7 +14,7 @@
   --emerald-bright: #34d399;
   --amber-bright: #fbbf24;
   --pink-bright: #f472b6;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Be Vietnam Pro', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
@@ -115,10 +115,11 @@ body {
 .cyber-main-title {
   font-size: clamp(1.45rem, 3.2vw, 2.75rem);
   font-weight: 900;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  line-height: 1.3;
-  padding-bottom: 0.08em;
+  line-height: 1.45;
+  padding-top: 0.18em;
+  padding-bottom: 0.12em;
   background: linear-gradient(to right, #06b6d4, #f97316, #ef4444, #06b6d4);
   background-size: 300% 300%;
   -webkit-background-clip: text;
@@ -140,6 +141,7 @@ body {
   color: #a5f3fc;
   margin-top: 6px;
   font-weight: 500;
+  line-height: 1.5;
   letter-spacing: 0.025em;
   max-width: 640px;
 }
@@ -313,10 +315,13 @@ body {
 /* Country Name Title (Without HELLO / WELCOME) */
 .card-country-title {
   text-align: center;
-  font-weight: 900;
+  font-family: var(--font-sans);
+  font-weight: 800;
   color: #ffffff;
   font-size: 1.15rem;
-  letter-spacing: 0.06em;
+  line-height: 1.4;
+  padding-top: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 12px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
@@ -331,8 +336,9 @@ body {
   border-radius: 16px;
   background: #030914;
   border: 1px solid rgba(6, 182, 212, 0.4);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.5;
   margin-bottom: 14px;
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
 }
@@ -344,14 +350,18 @@ body {
 }
 
 .spec-key {
-  color: #cbd5e1;
+  font-family: var(--font-sans);
+  color: #e2e8f0;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
 }
 
 .spec-val {
-  font-weight: 900;
-  letter-spacing: 0.03em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
 }
 
 .spec-val.ping-emerald {
@@ -367,6 +377,10 @@ body {
 }
 
 .spec-val.status-active {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
   color: #34d399;
   display: inline-flex;
   align-items: center;
@@ -384,8 +398,9 @@ body {
   background: rgba(8, 51, 68, 0.4);
   color: #a5f3fc;
   font-family: var(--font-sans);
-  font-weight: 900;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
   font-size: 0.85rem;
   text-transform: uppercase;
   box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
@@ -497,7 +512,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   z-index: 30;
 }
 
@@ -506,20 +521,32 @@ body {
 }
 
 .status-label {
-  font-size: 0.64rem;
-  color: #94a3b8;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #cbd5e1;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 2px;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  margin-bottom: 3px;
 }
 
 .status-value {
+  font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  line-height: 1.45;
+  padding: 2px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#status-risk-level {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: 0.03em;
 }
 
 .status-value.val-emerald {

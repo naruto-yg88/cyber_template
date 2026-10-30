@@ -80,7 +80,7 @@ const BLOCK_DEVTOOLS = false;
   const COUNTRY_CATALOG = {
     vn: {
       code: 'vn',
-      name: 'VIETNAM',
+      name: 'VIỆT NAM',
       region: 'SE-ASIA TUNNEL',
       accent: '#ef4444',
       fakeIpPrefix: '14.161.42.',
@@ -98,7 +98,7 @@ const BLOCK_DEVTOOLS = false;
     },
     jp: {
       code: 'jp',
-      name: 'JAPAN',
+      name: 'NHẬT BẢN',
       region: 'EAST-ASIA TUNNEL',
       accent: '#f43f5e',
       fakeIpPrefix: '133.242.18.',
@@ -107,7 +107,7 @@ const BLOCK_DEVTOOLS = false;
     },
     kr: {
       code: 'kr',
-      name: 'SOUTH KOREA',
+      name: 'HÀN QUỐC',
       region: 'EAST-ASIA TUNNEL',
       accent: '#38bdf8',
       fakeIpPrefix: '211.234.12.',
@@ -116,7 +116,7 @@ const BLOCK_DEVTOOLS = false;
     },
     th: {
       code: 'th',
-      name: 'THAILAND',
+      name: 'THÁI LAN',
       region: 'SE-ASIA TUNNEL',
       accent: '#06b6d4',
       fakeIpPrefix: '45.120.150.',
@@ -134,7 +134,7 @@ const BLOCK_DEVTOOLS = false;
     },
     ae: {
       code: 'ae',
-      name: 'UAE - DUBAI',
+      name: 'DUBAI - UAE',
       region: 'MIDDLE-EAST TUNNEL',
       accent: '#10b981',
       fakeIpPrefix: '94.200.15.',
@@ -143,7 +143,7 @@ const BLOCK_DEVTOOLS = false;
     },
     gb: {
       code: 'gb',
-      name: 'UNITED KINGDOM',
+      name: 'ANH QUỐC',
       region: 'EUROPE TUNNEL',
       accent: '#38bdf8',
       fakeIpPrefix: '51.140.128.',
@@ -152,7 +152,7 @@ const BLOCK_DEVTOOLS = false;
     },
     us: {
       code: 'us',
-      name: 'UNITED STATES',
+      name: 'HOA KỲ',
       region: 'AMERICAS TUNNEL',
       accent: '#06b6d4',
       fakeIpPrefix: '104.244.42.',
@@ -188,7 +188,7 @@ const BLOCK_DEVTOOLS = false;
     },
     hk: {
       code: 'hk',
-      name: 'HONG KONG',
+      name: 'HỒNG KÔNG',
       region: 'EAST-ASIA TUNNEL',
       accent: '#f43f5e',
       fakeIpPrefix: '43.249.36.',
@@ -197,7 +197,7 @@ const BLOCK_DEVTOOLS = false;
     },
     tw: {
       code: 'tw',
-      name: 'TAIWAN',
+      name: 'ĐÀI LOAN',
       region: 'EAST-ASIA TUNNEL',
       accent: '#38bdf8',
       fakeIpPrefix: '61.216.102.',
@@ -206,7 +206,7 @@ const BLOCK_DEVTOOLS = false;
     },
     kh: {
       code: 'kh',
-      name: 'CAMBODIA',
+      name: 'CAMPUCHIA',
       region: 'SE-ASIA TUNNEL',
       accent: '#06b6d4',
       fakeIpPrefix: '103.16.62.',
@@ -215,7 +215,7 @@ const BLOCK_DEVTOOLS = false;
     },
     in: {
       code: 'in',
-      name: 'INDIA',
+      name: 'ẤN ĐỘ',
       region: 'SOUTH-ASIA TUNNEL',
       accent: '#f59e0b',
       fakeIpPrefix: '139.59.221.',
@@ -224,7 +224,7 @@ const BLOCK_DEVTOOLS = false;
     },
     au: {
       code: 'au',
-      name: 'AUSTRALIA',
+      name: 'ÚC',
       region: 'OCEANIA TUNNEL',
       accent: '#22d3ee',
       fakeIpPrefix: '139.130.4.',
@@ -233,7 +233,7 @@ const BLOCK_DEVTOOLS = false;
     },
     tr: {
       code: 'tr',
-      name: 'TURKEY',
+      name: 'THỔ NHĨ KỲ',
       region: 'EURASIA TUNNEL',
       accent: '#ef4444',
       fakeIpPrefix: '88.247.112.',
@@ -242,7 +242,7 @@ const BLOCK_DEVTOOLS = false;
     },
     de: {
       code: 'de',
-      name: 'GERMANY',
+      name: 'ĐỨC',
       region: 'EUROPE TUNNEL',
       accent: '#fbbf24',
       fakeIpPrefix: '185.86.151.',
@@ -251,7 +251,7 @@ const BLOCK_DEVTOOLS = false;
     },
     fr: {
       code: 'fr',
-      name: 'FRANCE',
+      name: 'PHÁP',
       region: 'EUROPE TUNNEL',
       accent: '#38bdf8',
       fakeIpPrefix: '51.158.68.',
@@ -260,7 +260,7 @@ const BLOCK_DEVTOOLS = false;
     },
     cn: {
       code: 'cn',
-      name: 'CHINA',
+      name: 'TRUNG QUỐC',
       region: 'EAST-ASIA TUNNEL',
       accent: '#ef4444',
       fakeIpPrefix: '114.114.114.',
@@ -278,7 +278,7 @@ const BLOCK_DEVTOOLS = false;
     },
     ru: {
       code: 'ru',
-      name: 'RUSSIA',
+      name: 'NGA',
       region: 'EURASIA TUNNEL',
       accent: '#38bdf8',
       fakeIpPrefix: '95.163.212.',
@@ -287,7 +287,7 @@ const BLOCK_DEVTOOLS = false;
     },
     ch: {
       code: 'ch',
-      name: 'SWITZERLAND',
+      name: 'THỤY SĨ',
       region: 'EUROPE TUNNEL',
       accent: '#ef4444',
       fakeIpPrefix: '178.209.52.',
@@ -1086,7 +1086,7 @@ const BLOCK_DEVTOOLS = false;
       const rotateY = -Math.sin(theta) * (isMobile ? 18 : 24);
       const depth = (Math.cos(theta) + 1) / 2;
       const scale = (isMobile ? 0.56 : 0.58) + 0.42 * depth;
-      const opacity = 0.25 + 0.75 * Math.pow(depth, 0.85);
+      const opacity = 0.32 + 0.68 * Math.pow(depth, 0.9);
 
       card.style.zIndex = String(Math.round(10 + depth * 90));
       card.style.pointerEvents = 'auto';
@@ -1109,7 +1109,7 @@ const BLOCK_DEVTOOLS = false;
           scale.toFixed(3) +
           ')';
         card.style.opacity = opacity.toFixed(3);
-        card.style.filter = 'brightness(' + (0.52 + 0.48 * depth).toFixed(2) + ')';
+        card.style.filter = 'none';
       }
     }
 
